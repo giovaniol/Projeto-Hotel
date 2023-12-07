@@ -1,3 +1,5 @@
+package model.view.src;
+
 import java.util.ArrayList;
 
 public class Hospede extends Pessoa{
