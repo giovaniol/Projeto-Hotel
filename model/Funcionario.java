@@ -1,4 +1,4 @@
-package model.view.src;
+package model;
 
 public class Funcionario extends Pessoa{
 

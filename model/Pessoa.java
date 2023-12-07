@@ -1,4 +1,4 @@
-package model.view.src;
+package model;
 
 public abstract class Pessoa {
     private String nome;
