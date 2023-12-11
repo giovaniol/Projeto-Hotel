@@ -6,7 +6,15 @@ public abstract class Pessoa {
     private String cidade;
     private String estado;
     private String telefone;
+    private int senha;
 
+    public Pessoa(String nome, String endereco, String cidade, String estado, String telefone) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.telefone = telefone;
+    }
 
     public String getNome() {
         return nome;
