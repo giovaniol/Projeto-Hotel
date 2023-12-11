@@ -39,4 +39,18 @@ public class Boleto {
             return ChronoUnit.DAYS.between(dataVencimento, agora);
         }
     }
+
+    public void detalhesBoleto(Boleto boleto){
+        System.out.println("###########################");
+        System.out.println("Barras: " + codigoDeBarras);
+        System.out.println("Boleto: ");
+        System.out.println("Valor: R$" + valorBoleto);
+        System.out.println("Vencimento: " + boleto.getDataVencimento());
+        System.out.println("Vencimento: " + boleto.getVencimento());
+        System.out.println("------------");
+        System.out.println("Hoje: " + LocalDate.now());
+        System.out.println("Vencido à " + boleto.diasAtraso() + " dias");
+        System.out.println("###########################");
+        
+    }
 }
