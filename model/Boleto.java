@@ -2,6 +2,7 @@ package model;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Boleto {
     private LocalDate dataVencimento;
@@ -29,5 +30,13 @@ public class Boleto {
     }
     private void extrairValor() {
         valorBoleto = (codigoDeBarras % Math.pow(10, 10)) / 100;
+    }
+    public long diasAtraso(){
+        LocalDate agora = LocalDate.now();
+        if(dataVencimento.isAfter(agora) || dataVencimento.equals(agora)){
+            return 0;
+        }else {
+            return ChronoUnit.DAYS.between(dataVencimento, agora);
+        }
     }
 }
