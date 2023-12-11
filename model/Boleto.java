@@ -45,6 +45,9 @@ public class Boleto {
 
 
     }
+    public void setCodigoDeBarras(long codigoDeBarras) {
+        this.codigoDeBarras = codigoDeBarras;
+    }
     private void extrairData(){
         int dias;
         dias = (int) (codigoDeBarras / Math.pow(10,10));
@@ -55,7 +58,4 @@ public class Boleto {
         valorBoleto = (codigoDeBarras % Math.pow(10, 10)) / 100;
     }
 
-    public void setCodigoDeBarras(long codigoDeBarras) {
-        this.codigoDeBarras = codigoDeBarras;
-    }
 }

@@ -2,16 +2,18 @@ package model;
 
 import java.util.ArrayList;
 
+import static model.TipoAcomodacao.*;
+
 public class Acomodacao {
     private int numeroDaAcomodacao;
     private int andarDaAcomodacao;
     private ArrayList<Hospede> hospedes;
     private TipoAcomodacao codigoTipoAcomodacao;
-
     private double valorDaDiaria;
 
     public double getValorDaDiaria() {
         return valorDaDiaria;
+
     }
 
     public void setValorDaDiaria(double valorDaDiaria) {

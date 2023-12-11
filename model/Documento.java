@@ -21,7 +21,7 @@ public class Documento {
         return tipo;
     }
 
-    public void setTipo(TipoDocumento tipagem) {
+    private void setTipo(TipoDocumento tipagem) {
         this.tipo = tipagem;
     }
 }

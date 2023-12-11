@@ -6,7 +6,7 @@ import java.util.List;
 public class Hotel {
     private ArrayList<Hospede> hospedesNoHotel;
     private ArrayList<Funcionario> funcionario;
-    private Boleto boleto;
+
     private ArrayList<Acomodacao> acomodacoesDoHotel;
     private ArrayList<Reserva> reserva;
     private List<ItensDeConsumo> itensDeConsumos;
@@ -76,6 +76,7 @@ public class Hotel {
     public boolean verificarPossibilidadeDeReserva(){
         return false;
     }
+
 
 
 

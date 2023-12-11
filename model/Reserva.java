@@ -9,6 +9,7 @@ public class Reserva {
     private LocalDate dataSaidaDoHospede;
     private Hospede hospedePrincipal;
     private Acomodacao acomodacaoDesejada;
+    private Boleto boleto;
     private List<ItensDeConsumo> consumidos;
     private List<Hospede> acompanhantes;
     private double taxaDeMulta;
@@ -36,30 +37,37 @@ public class Reserva {
         total = calcularConsumo();
         total = calculoDaEstadia();
         return total;
-
     }
 
-    public void setAcompanhantes(List<Hospede> acompanhantes) {
-        this.acompanhantes.addAll(acompanhantes);
+    public LocalDate getDataChegadaDoHospede() {
+        return dataChegadaDoHospede;
     }
 
-    public void setAcomodacaoDesejada(Acomodacao acomodacaoDesejada) {
-        this.acomodacaoDesejada = acomodacaoDesejada;
-    }
-
-    public void setDataChegadaDoHospede() {
-        this.dataChegadaDoHospede = LocalDate.now();
-    }
     public void setDataChegadaDoHospede(LocalDate dataChegadaDoHospede) {
         this.dataChegadaDoHospede = dataChegadaDoHospede;
     }
 
-    public void setDataSaidaDoHospede() {
-        dataSaidaDoHospede = LocalDate.now();
-
+    public LocalDate getDataSaidaDoHospede() {
+        return dataSaidaDoHospede;
     }
-    public void setDataSaidaDoHospede(LocalDate dataSaida) {
-        this.dataSaidaDoHospede = dataSaida;
 
+    public void setDataSaidaDoHospede(LocalDate dataSaidaDoHospede) {
+        this.dataSaidaDoHospede = dataSaidaDoHospede;
+    }
+
+    public double getTaxaDeMulta() {
+        return taxaDeMulta;
+    }
+
+    public void setTaxaDeMulta(double taxaDeMulta) {
+        this.taxaDeMulta = taxaDeMulta;
+    }
+
+    public Boleto getBoleto() {
+        return boleto;
+    }
+
+    public void setBoleto(Boleto boleto) {
+        this.boleto = boleto;
     }
 }
