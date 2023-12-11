@@ -51,6 +51,7 @@ public class Boleto {
         System.out.println("Hoje: " + LocalDate.now());
         System.out.println("Vencido à " + boleto.diasAtraso() + " dias");
         System.out.println("###########################");
-        
+
+
     }
 }

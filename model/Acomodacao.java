@@ -9,9 +9,35 @@ public class Acomodacao {
     private TipoAcomodacao codigoTipoAcomodacao;
 
 
+    public int getNumeroDaAcomodacao() {
+        return numeroDaAcomodacao;
+    }
 
+    public void setNumeroDaAcomodacao(int numeroDaAcomodacao) {
+        this.numeroDaAcomodacao = numeroDaAcomodacao;
+    }
 
+    public int getAndarDaAcomodacao() {
+        return andarDaAcomodacao;
+    }
 
+    public void setAndarDaAcomodacao(int andarDaAcomodacao) {
+        this.andarDaAcomodacao = andarDaAcomodacao;
+    }
 
+    public ArrayList<Hospede> getHospedes() {
+        return hospedes;
+    }
 
+    public void setHospedes(ArrayList<Hospede> hospedes) {
+        this.hospedes = hospedes;
+    }
+
+    public TipoAcomodacao getCodigoTipoAcomodacao() {
+        return codigoTipoAcomodacao;
+    }
+
+    public void setCodigoTipoAcomodacao(TipoAcomodacao codigoTipoAcomodacao) {
+        this.codigoTipoAcomodacao = codigoTipoAcomodacao;
+    }
 }
