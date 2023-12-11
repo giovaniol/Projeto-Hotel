@@ -8,6 +8,15 @@ public class Acomodacao {
     private ArrayList<Hospede> hospedes;
     private TipoAcomodacao codigoTipoAcomodacao;
 
+    private double valorDaDiaria;
+
+    public double getValorDaDiaria() {
+        return valorDaDiaria;
+    }
+
+    public void setValorDaDiaria(double valorDaDiaria) {
+        this.valorDaDiaria = valorDaDiaria;
+    }
 
     public int getNumeroDaAcomodacao() {
         return numeroDaAcomodacao;

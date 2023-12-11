@@ -4,8 +4,24 @@ public class Documento {
     private String numero;
     private TipoDocumento tipo;
 
-    public Documento(String numero, TipoDocumento tipo) {
+    public Documento(String numero, TipoDocumento tipagem) {
+        setNumero(numero);
+        setTipo(tipagem);
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
         this.numero = numero;
-        this.tipo = tipo;
+    }
+
+    public TipoDocumento getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoDocumento tipagem) {
+        this.tipo = tipagem;
     }
 }

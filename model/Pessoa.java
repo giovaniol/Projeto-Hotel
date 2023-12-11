@@ -8,12 +8,22 @@ public abstract class Pessoa {
     private String telefone;
     private int senha;
 
-    public Pessoa(String nome, String endereco, String cidade, String estado, String telefone) {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.telefone = telefone;
+
+    public Pessoa(String nome, String endereco, String cidade, String estado, String telefone, int senha) {
+
+        setNome(nome);
+        setEndereco(endereco);
+        setCidade(cidade);
+        setEstado(estado);
+        setTelefone(telefone);
+        setSenha(senha);
+    }
+    public int getSenha() {
+        return senha;
+    }
+
+    public void setSenha(int senha) {
+        this.senha = senha;
     }
 
     public String getNome() {

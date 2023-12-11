@@ -10,7 +10,7 @@ public class Boleto {
     private long codigoDeBarras;
 
     public Boleto(long codigoDeBarras){
-        this.codigoDeBarras = codigoDeBarras;
+        setCodigoDeBarras(codigoDeBarras);
         extrairData();
         extrairValor();
     }
@@ -21,15 +21,6 @@ public class Boleto {
     public  String getVencimento(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return  dataVencimento.format(formatter);
-    }
-    private void extrairData(){
-        int dias;
-        dias = (int) (codigoDeBarras / Math.pow(10,10));
-        LocalDate dataBase = LocalDate.of(1997, Month.OCTOBER, 07);
-        dataVencimento = dataBase.plusDays(dias);
-    }
-    private void extrairValor() {
-        valorBoleto = (codigoDeBarras % Math.pow(10, 10)) / 100;
     }
     public long diasAtraso(){
         LocalDate agora = LocalDate.now();
@@ -53,5 +44,18 @@ public class Boleto {
         System.out.println("###########################");
 
 
+    }
+    private void extrairData(){
+        int dias;
+        dias = (int) (codigoDeBarras / Math.pow(10,10));
+        LocalDate dataBase = LocalDate.of(1997, Month.OCTOBER, 07);
+        dataVencimento = dataBase.plusDays(dias);
+    }
+    private void extrairValor() {
+        valorBoleto = (codigoDeBarras % Math.pow(10, 10)) / 100;
+    }
+
+    public void setCodigoDeBarras(long codigoDeBarras) {
+        this.codigoDeBarras = codigoDeBarras;
     }
 }

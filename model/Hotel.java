@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hotel {
     private ArrayList<Hospede> hospedesNoHotel;
@@ -8,7 +9,7 @@ public class Hotel {
     private Boleto boleto;
     private ArrayList<Acomodacao> acomodacoesDoHotel;
     private ArrayList<Reserva> reserva;
-
+    private List<ItensDeConsumo> itensDeConsumos;
     public Hotel() {
 
         funcionario = new ArrayList<>();
@@ -16,29 +17,65 @@ public class Hotel {
         reserva = new ArrayList<>();
     }
 
-    private void adicionaFuncionario(Funcionario funcionario){
+    public void adicionaHospede(){
+
+    }
+    public void ajusteHospede(){
+
+    }
+    public void removeHospede(){
+
+    }
+    public void adicionaItem(){
+
+    }
+    public void ajusteItem(){
+
+    }
+    public void removeItem(){
+
+    }
+
+    public void adicionaFuncionario(Funcionario funcionario){
         this.funcionario.add(funcionario);
         System.out.println("Funcionário contratado com sucesso!");
 
     }
-    private void removeFuncionario(String nome){
+    public void removeFuncionario(String nome){
         this.funcionario.removeIf(alguem -> alguem.getNome().trim().equalsIgnoreCase(nome.trim()));
     }
-    private void ajusteFuncionario(){
+    public void ajusteFuncionario(){
 
     }
-    private void adicionaAcomodacao(Acomodacao acomodacao){
+    public void adicionaAcomodacao(Acomodacao acomodacao){
         this.acomodacoesDoHotel.add(acomodacao);
 
     }
-    private void ajusteAcomodacao(){
+    public void ajusteAcomodacao(){
 
     }
-    private void removeAcomodacao(int numeroDaAcomodacao){
+    public void removeAcomodacao(int numeroDaAcomodacao){
         this.acomodacoesDoHotel.removeIf(numero -> numero.getNumeroDaAcomodacao() == numeroDaAcomodacao);
 
     }
+    public void adicionarReserna(){
 
+    }
+
+    public void ajusteReserva(){
+
+    }
+    public void removeReserva(){
+
+    }
+    public void checkInDoHotel(Reserva reserva){
+
+    }
+    public void checkOutDoHotel(Reserva reserva){
+    }
+    public boolean verificarPossibilidadeDeReserva(){
+        return false;
+    }
 
 
 

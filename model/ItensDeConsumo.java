@@ -8,4 +8,10 @@ public class ItensDeConsumo {
     private Funcionario funcionarioQueVendeu;
     private Acomodacao acomodacaoDoConsumo;
     private List<ItensDeConsumo> itensConsumidos;
+
+    private double preco;
+
+    public double getPreco(){
+        return this.preco;
+    }
 }
