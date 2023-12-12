@@ -9,7 +9,7 @@ public class Hotel {
 
     private ArrayList<Acomodacao> acomodacoesDoHotel;
     private ArrayList<Reserva> reserva;
-    private List<ItensDeConsumo> itensDeConsumos;
+    private ArrayList<ItensDeConsumo> itensDeConsumos;
     public Hotel() {
 
         funcionario = new ArrayList<>();

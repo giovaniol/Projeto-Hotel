@@ -10,8 +10,8 @@ public class Reserva {
     private Hospede hospedePrincipal;
     private Acomodacao acomodacaoDesejada;
     private Boleto boleto;
-    private List<ItensDeConsumo> consumidos;
-    private List<Hospede> acompanhantes;
+    private ArrayList<ItensDeConsumo> consumidos;
+    private ArrayList<Hospede> acompanhantes;
     private double taxaDeMulta;
 
     public Reserva(){
