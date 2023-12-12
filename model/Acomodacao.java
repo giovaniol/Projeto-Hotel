@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-import static model.TipoAcomodacao.*;
+
 
 public class Acomodacao {
     private int numeroDaAcomodacao;

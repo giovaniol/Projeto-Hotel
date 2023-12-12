@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Reserva {
     private LocalDate dataChegadaDoHospede;
@@ -12,12 +12,17 @@ public class Reserva {
     private Boleto boleto;
     private ArrayList<ItensDeConsumo> consumidos;
     private ArrayList<Hospede> acompanhantes;
+
     private double taxaDeMulta;
 
-    public Reserva(){
+    public Reserva(LocalDate dataChegadaDoHospede, Hospede hospedePrincipal,
+                   Acomodacao acomodacaoDesejada, Hospede principal) {
+        setDataChegadaDoHospede(getDataChegadaDoHospede());
+        setHospedePrincipal(hospedePrincipal);
+        setAcomodacaoDesejada(acomodacaoDesejada);
+//        iniciarArrayList(acompanhantes);
         acompanhantes = new ArrayList<>();
         consumidos = new ArrayList<>();
-
     }
 
     public double calculoDaEstadia(){
@@ -37,6 +42,10 @@ public class Reserva {
         total = calcularConsumo();
         total = calculoDaEstadia();
         return total;
+    }
+    public void adicionarAcompanhantes(Hospede hospede){
+        acompanhantes.add(hospede);
+        System.out.println("Acompanhante adicionado.");
     }
 
     public LocalDate getDataChegadaDoHospede() {
@@ -70,4 +79,18 @@ public class Reserva {
     public void setBoleto(Boleto boleto) {
         this.boleto = boleto;
     }
+    public void setHospedePrincipal(Hospede hospedePrincipal) {
+
+        this.hospedePrincipal = hospedePrincipal;
+    }
+
+    public void setAcomodacaoDesejada(Acomodacao acomodacaoDesejada) {
+        this.acomodacaoDesejada = acomodacaoDesejada;
+    }
+
+
+
+//    private <T> void iniciarArrayList(ArrayList<T> array){
+//        array = new ArrayList<T>();
+//    }
 }

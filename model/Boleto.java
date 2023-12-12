@@ -16,6 +16,7 @@ public class Boleto {
     }
 
     public LocalDate getDataVencimento(){
+
         return dataVencimento;
     }
     public  String getVencimento(){
@@ -51,7 +52,7 @@ public class Boleto {
     private void extrairData(){
         int dias;
         dias = (int) (codigoDeBarras / Math.pow(10,10));
-        LocalDate dataBase = LocalDate.of(1997, Month.OCTOBER, 07);
+        LocalDate dataBase = LocalDate.of(1997, Month.OCTOBER, 7);
         dataVencimento = dataBase.plusDays(dias);
     }
     private void extrairValor() {
