@@ -1,7 +1,7 @@
 package model;
 
 import java.time.LocalDate;
-
+import java.util.ArrayList;
 
 public class Hospede extends Pessoa{
 
@@ -75,14 +75,29 @@ private CartaoDeCredito cartaoDoHospede;
         this.dataNascimento = dataNascimento;
     }
 
-    public CartaoDeCredito getCartaoDoHospede() {
-        return cartaoDoHospede;
+    public long getCartaoDoHospede() {
+        return cartaoDoHospede.getNumeroDoCartao();
     }
 
     public void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
         this.cartaoDoHospede = cartaoDoHospede;
     }
 
-
-
+    public void detalhesHospede() {
+        System.out.println("-------------Hospede--------------");
+        System.out.println("Nome: " + getNome());
+        System.out.println("Cidade: " + getCidade());
+        System.out.println("Estado: " + getEstado());
+        System.out.println("Endereço: " + getEndereco());
+        System.out.println("Telefone: " + getTelefone());
+        System.out.println("Documento: " + getDocumento());
+        System.out.println("Data de nascimento: " + getDataNascimento());
+        System.out.println("Email: " + getEmail());
+        System.out.println("Senha: " + getSenha());
+        System.out.println("Pais: " + getPais());
+        System.out.println("Nome do pai: " + getNomeDoPai());
+        System.out.println("Nome da mae: " + getNomeDaMae());
+        System.out.println("Cartao do Hospede: " + getCartaoDoHospede());
+        System.out.println("----------------------------------");
+    }
 }
