@@ -43,8 +43,8 @@ private CartaoDeCredito cartaoDoHospede;
         this.email = email;
     }
 
-    public Documento getDocumento() {
-        return documento;
+    public TipoDocumento getDocumento() {
+        return documento.getTipo();
     }
 
     public void setDocumento(Documento documento) {
