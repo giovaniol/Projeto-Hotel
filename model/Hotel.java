@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
@@ -10,22 +11,23 @@ public class Hotel {
     private ArrayList<Reserva> reserva;
     private ArrayList<ItensDeConsumo> itensDeConsumos;
     public Hotel() {
-
+        hospedesNoHotel = new ArrayList<>();
         funcionario = new ArrayList<>();
+        itensDeConsumos = new ArrayList<>();
         acomodacoesDoHotel = new ArrayList<>();
         reserva = new ArrayList<>();
     }
 
     public void adicionaHospede(Hospede hospede){
         hospedesNoHotel.add(hospede);
-        System.out.println("Hóspede incluído no hotel.");
+
     }
     public void ajusteHospede(){
 
     }
     public void removeHospede(Hospede hospede){
         hospedesNoHotel.remove(hospede);
-        System.out.println("Hóspede removido do hotel");
+
     }
     public void adicionaItem(){
 
@@ -61,17 +63,17 @@ public class Hotel {
     }
     public void adicionarReserva(Reserva reservinha){
         reserva.add(reservinha);
-        System.out.println("Reserva feita com êxito.");
     }
 
     public void ajusteReserva(){
 
     }
+
     public void removeReserva(Reserva reservinha){
         reserva.remove(reservinha);
     }
-    public void checkInDoHotel(Reserva reserva){
-
+    public void checkInDoHotel(Reserva reservinha){
+        reserva.add(reservinha);
     }
     public void checkOutDoHotel(Reserva reserva){
     }
@@ -80,9 +82,16 @@ public class Hotel {
         return false;
     }
 
-
-
-
+    public void relatorioDeHospedes() {
+        for (Hospede alguem: hospedesNoHotel) {
+            alguem.detalhesHospede();
+        }
+    }
+    public void getHospedes(){
+        for (Hospede alguem: hospedesNoHotel) {
+            System.out.println("Nome do Hospede: " + alguem.getNome());
+        }
+    }
 
 
 

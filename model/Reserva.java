@@ -1,11 +1,15 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 
 public class Reserva {
+
+    private LocalTime horaDeEntradaDoHospede;
     private LocalDate dataChegadaDoHospede;
+    private LocalTime horaDeSaidaDoHospede;
     private LocalDate dataSaidaDoHospede;
     private Hospede hospedePrincipal;
     private Acomodacao acomodacaoDesejada;
@@ -14,12 +18,16 @@ public class Reserva {
     private ArrayList<Hospede> acompanhantes;
     private double taxaDeMulta;
 
-    public Reserva(LocalDate dataChegadaDoHospede, LocalDate dataSaidaDoHospede,
+    public Reserva(LocalDate dataChegadaDoHospede, LocalTime horaDeEntradaDoHospede, LocalTime horaDeSaidaDoHospede,
+                   LocalDate dataSaidaDoHospede,
                    Hospede hospedePrincipal, Acomodacao acomodacaoDesejada) {
         setDataChegadaDoHospede(getDataChegadaDoHospede());
         setHospedePrincipal(hospedePrincipal);
         setAcomodacaoDesejada(acomodacaoDesejada);
         setDataSaidaDoHospede(dataSaidaDoHospede);
+        setHoraDeEntradaDoHospede(horaDeEntradaDoHospede);
+        setHoraDeSaidaDoHospede(horaDeSaidaDoHospede);
+
         acompanhantes = new ArrayList<>();
         consumidos = new ArrayList<>();
     }
@@ -44,6 +52,22 @@ public class Reserva {
     public void adicionarAcompanhantes(Hospede hospede){
         acompanhantes.add(hospede);
         System.out.println("Acompanhante adicionado.");
+    }
+
+    public LocalTime getHoraDeEntradaDoHospede() {
+        return horaDeEntradaDoHospede;
+    }
+
+    public void setHoraDeEntradaDoHospede(LocalTime horaDeEntradaDoHospede) {
+        this.horaDeEntradaDoHospede = horaDeEntradaDoHospede;
+    }
+
+    public LocalTime getHoraDeSaidaDoHospede() {
+        return horaDeSaidaDoHospede;
+    }
+
+    public void setHoraDeSaidaDoHospede(LocalTime horaDeSaidaDoHospede) {
+        this.horaDeSaidaDoHospede = horaDeSaidaDoHospede;
     }
 
     public LocalDate getDataChegadaDoHospede() {

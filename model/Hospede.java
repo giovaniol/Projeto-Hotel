@@ -26,7 +26,21 @@ private CartaoDeCredito cartaoDoHospede;
         setDataNascimento(dataNascimento);
         setCartaoDoHospede(new CartaoDeCredito(numeroDoCartao, cvv, dataDeValidadeDoCartao));
     }
-
+    public void detalhesHospede() {
+        System.out.println("-------------Hospede--------------");
+        System.out.println("Nome: " + getNome());
+        System.out.println("Cidade: " + getCidade());
+        System.out.println("Estado: " + getEstado());
+        System.out.println("Endereço: " + getEndereco());
+        System.out.println("Telefone: " + getTelefone());
+        System.out.println("Data de nascimento: " + getDataNascimento());
+        System.out.println("Documento: " + getDocumento());
+        System.out.println("Email: " + getEmail());
+        System.out.println("País: " + getPais());
+        System.out.println("Nome do pai: " + getNomeDoPai());
+        System.out.println("Nome da mae: " + getNomeDaMae());
+        System.out.println("----------------------------------");
+    }
     public String getPais() {
         return pais;
     }
@@ -43,8 +57,8 @@ private CartaoDeCredito cartaoDoHospede;
         this.email = email;
     }
 
-    public Documento getDocumento() {
-        return documento;
+    public TipoDocumento getDocumento() {
+        return documento.getTipo();
     }
 
     public void setDocumento(Documento documento) {
@@ -83,21 +97,5 @@ private CartaoDeCredito cartaoDoHospede;
         this.cartaoDoHospede = cartaoDoHospede;
     }
 
-    public void detalhesHospede() {
-        System.out.println("-------------Hospede--------------");
-        System.out.println("Nome: " + getNome());
-        System.out.println("Cidade: " + getCidade());
-        System.out.println("Estado: " + getEstado());
-        System.out.println("Endereço: " + getEndereco());
-        System.out.println("Telefone: " + getTelefone());
-        System.out.println("Documento: " + getDocumento());
-        System.out.println("Data de nascimento: " + getDataNascimento());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Senha: " + getSenha());
-        System.out.println("Pais: " + getPais());
-        System.out.println("Nome do pai: " + getNomeDoPai());
-        System.out.println("Nome da mae: " + getNomeDaMae());
-        System.out.println("Cartao do Hospede: " + getCartaoDoHospede());
-        System.out.println("----------------------------------");
-    }
+
 }
