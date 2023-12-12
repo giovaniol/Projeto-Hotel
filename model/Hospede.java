@@ -82,4 +82,7 @@ private CartaoDeCredito cartaoDoHospede;
     public void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
         this.cartaoDoHospede = cartaoDoHospede;
     }
+
+
+
 }

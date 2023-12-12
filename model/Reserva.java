@@ -12,15 +12,14 @@ public class Reserva {
     private Boleto boleto;
     private ArrayList<ItensDeConsumo> consumidos;
     private ArrayList<Hospede> acompanhantes;
-
     private double taxaDeMulta;
 
-    public Reserva(LocalDate dataChegadaDoHospede, Hospede hospedePrincipal,
-                   Acomodacao acomodacaoDesejada, Hospede principal) {
+    public Reserva(LocalDate dataChegadaDoHospede, LocalDate dataSaidaDoHospede,
+                   Hospede hospedePrincipal, Acomodacao acomodacaoDesejada) {
         setDataChegadaDoHospede(getDataChegadaDoHospede());
         setHospedePrincipal(hospedePrincipal);
         setAcomodacaoDesejada(acomodacaoDesejada);
-//        iniciarArrayList(acompanhantes);
+        setDataSaidaDoHospede(dataSaidaDoHospede);
         acompanhantes = new ArrayList<>();
         consumidos = new ArrayList<>();
     }
@@ -39,8 +38,7 @@ public class Reserva {
     }
     public double calcularTotalAPagar(){
         double total = 0.0;
-        total = calcularConsumo();
-        total = calculoDaEstadia();
+        total = calcularConsumo() + calculoDaEstadia();
         return total;
     }
     public void adicionarAcompanhantes(Hospede hospede){
@@ -83,14 +81,15 @@ public class Reserva {
 
         this.hospedePrincipal = hospedePrincipal;
     }
+    public Hospede getHospedePrincipal() {
+        return hospedePrincipal;
+    }
 
     public void setAcomodacaoDesejada(Acomodacao acomodacaoDesejada) {
         this.acomodacaoDesejada = acomodacaoDesejada;
     }
 
-
-
-//    private <T> void iniciarArrayList(ArrayList<T> array){
-//        array = new ArrayList<T>();
-//    }
+    public Acomodacao getAcomodacaoDesejada() {
+        return acomodacaoDesejada;
+    }
 }

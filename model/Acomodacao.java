@@ -11,10 +11,7 @@ public class Acomodacao {
     private TipoAcomodacao codigoTipoAcomodacao;
     private double valorDaDiaria;
 
-    public double getValorDaDiaria() {
-        return valorDaDiaria;
-
-    }
+    public double getValorDaDiaria() { return valorDaDiaria; }
 
     public void setValorDaDiaria(double valorDaDiaria) {
         this.valorDaDiaria = valorDaDiaria;
