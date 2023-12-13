@@ -2,20 +2,54 @@ package model;
 
 import java.time.LocalDate;
 
+/**
+ * A classe Hospede representa um hóspede em um sistema de hospedagem, estendendo a classe Pessoa.
+ * Contém informações específicas de um hóspede, como país de origem, email, documento, nome do pai,
+ * nome da mãe, data de nascimento e cartão de crédito.
+ *
+ * @author Giovani
+ *
+ * @see Pessoa
+ * @see Documento
+ * @see CartaoDeCredito
+ */
+public class Hospede extends Pessoa {
 
-public class Hospede extends Pessoa{
-private final int SENHA = 1000;
-private String pais;
-private String email;
-private Documento documento;
-private String nomeDoPai;
-private String nomeDaMae;
-private LocalDate dataNascimento;
-private CartaoDeCredito cartaoDoHospede;
+    /**
+     * Constante para a senha padrão do hóspede.
+     */
+    private final int SENHA = 1000;
 
+    private String pais;
+    private String email;
+    private Documento documento;
+    private String nomeDoPai;
+    private String nomeDaMae;
+    private LocalDate dataNascimento;
+    private CartaoDeCredito cartaoDoHospede;
+
+    /**
+     * Constrói um objeto Hospede com as informações especificadas.
+     *
+     * @param nome                       O nome do hóspede.
+     * @param endereco                   O endereço do hóspede.
+     * @param cidade                     A cidade onde o hóspede reside.
+     * @param estado                     O estado onde o hóspede está localizado.
+     * @param telefone                   O número de telefone do hóspede.
+     * @param pais                       O país de origem do hóspede.
+     * @param email                      O email do hóspede.
+     * @param documento                  O número do documento do hóspede.
+     * @param tipo                       O tipo de documento do hóspede.
+     * @param nomeDaMae                  O nome da mãe do hóspede.
+     * @param nomeDoPai                  O nome do pai do hóspede.
+     * @param dataNascimento             A data de nascimento do hóspede.
+     * @param numeroDoCartao             O número do cartão de crédito do hóspede.
+     * @param cvv                        O código de segurança do cartão de crédito do hóspede.
+     * @param dataDeValidadeDoCartao     A data de validade do cartão de crédito do hóspede.
+     */
     public Hospede(String nome, String endereco, String cidade, String estado, String telefone,
-                   String pais, String email, String documento, TipoDocumento tipo, String nomeDaMae
-            , String nomeDoPai, LocalDate dataNascimento,
+                   String pais, String email, String documento, TipoDocumento tipo, String nomeDaMae,
+                   String nomeDoPai, LocalDate dataNascimento,
                    long numeroDoCartao, int cvv, LocalDate dataDeValidadeDoCartao) {
         super(nome, endereco, cidade, estado, telefone);
         setPais(pais);
@@ -27,8 +61,83 @@ private CartaoDeCredito cartaoDoHospede;
         setCartaoDoHospede(new CartaoDeCredito(numeroDoCartao, cvv, dataDeValidadeDoCartao));
     }
 
+    /**
+     * Obtém o país de origem do hóspede.
+     *
+     * @return O país de origem do hóspede.
+     */
+    public String getPais() {
+        return pais;
+    }
+
+    /**
+     * Obtém o email do hóspede.
+     *
+     * @return O email do hóspede.
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Obtém o documento do hóspede.
+     *
+     * @return O documento do hóspede.
+     */
+    public Documento getDocumento() {
+        return documento;
+    }
+
+    /**
+     * Obtém o nome do pai do hóspede.
+     *
+     * @return O nome do pai do hóspede.
+     */
+    public String getNomeDoPai() {
+        return nomeDoPai;
+    }
+
+    /**
+     * Obtém o nome da mãe do hóspede.
+     *
+     * @return O nome da mãe do hóspede.
+     */
+    public String getNomeDaMae() {
+        return nomeDaMae;
+    }
+
+    /**
+     * Obtém a data de nascimento do hóspede.
+     *
+     * @return A data de nascimento do hóspede.
+     */
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    /**
+     * Obtém o cartão de crédito do hóspede.
+     *
+     * @return O cartão de crédito do hóspede.
+     */
+    public CartaoDeCredito getCartaoDoHospede() {
+        return cartaoDoHospede;
+    }
+
+    /**
+     * Obtém a senha padrão do hóspede.
+     *
+     * @return A senha padrão do hóspede.
+     */
+    public int getSENHA() {
+        return SENHA;
+    }
+
+    /**
+     * Exibe detalhes sobre o hóspede.
+     */
     public void detalhesHospede() {
-        System.out.println("----------Hospede------------");
+        System.out.println("----------Hóspede------------");
         System.out.println("Nome: " + getNome());
         System.out.println("Cidade: " + getCidade());
         System.out.println("Estado: " + getEstado());
@@ -39,61 +148,35 @@ private CartaoDeCredito cartaoDoHospede;
         System.out.println("Email: " + getEmail());
         System.out.println("País: " + getPais());
         System.out.println("Nome do pai: " + getNomeDoPai());
-        System.out.println("Nome da mae: " + getNomeDaMae());
+        System.out.println("Nome da mãe: " + getNomeDaMae());
         System.out.println("------------------------------");
     }
 
-    public String getPais() {
-        return pais;
-    }
-    public String getEmail() {
-        return email;
+    private void setPais(String pais) {
+        this.pais = pais;
     }
 
-    public Documento getDocumento() {
-        return documento;
-    }
-    public String getNomeDoPai() {
-        return nomeDoPai;
-    }
-    public String getNomeDaMae() {
-        return nomeDaMae;
-    }
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
+    private void setEmail(String email) {
+        this.email = email;
     }
 
-
-    public CartaoDeCredito getCartaoDoHospede() {
-        return cartaoDoHospede;
+    private void setDocumento(Documento documento) {
+        this.documento = documento;
     }
 
-    public int getSENHA() {
-        return SENHA;
+    private void setNomeDoPai(String nomeDoPai) {
+        this.nomeDoPai = nomeDoPai;
+    }
+
+    private void setNomeDaMae(String nomeDaMae) {
+        this.nomeDaMae = nomeDaMae;
     }
 
     private void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    private void setPais(String pais) {
-        this.pais = pais;
-    }
-    private void setEmail(String email) {
-        this.email = email;
-    }
-    private void setDocumento(Documento documento) {
-        this.documento = documento;
-    }
-    private void setNomeDoPai(String nomeDoPai) {
-        this.nomeDoPai = nomeDoPai;
-    }
-    private void setNomeDaMae(String nomeDaMae) {
-        this.nomeDaMae = nomeDaMae;
-    }
 
     private void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
         this.cartaoDoHospede = cartaoDoHospede;
     }
-
-
 }
