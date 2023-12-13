@@ -20,13 +20,41 @@ public class Hospede extends Pessoa {
      */
     private final int SENHA = 1000;
 
+    /**
+     * O país de origem do hóspede.
+     */
     private String pais;
+
+    /**
+     * O endereço de email do hóspede.
+     */
     private String email;
+
+    /**
+     * O documento do hóspede, contendo número e tipo.
+     */
     private Documento documento;
+
+    /**
+     * O nome do pai do hóspede.
+     */
     private String nomeDoPai;
+
+    /**
+     * O nome da mãe do hóspede.
+     */
     private String nomeDaMae;
+
+    /**
+     * A data de nascimento do hóspede.
+     */
     private LocalDate dataNascimento;
+
+    /**
+     * O cartão de crédito associado ao hóspede.
+     */
     private CartaoDeCredito cartaoDoHospede;
+
 
     /**
      * Constrói um objeto Hospede com as informações especificadas.
