@@ -46,56 +46,48 @@ private CartaoDeCredito cartaoDoHospede;
     public String getPais() {
         return pais;
     }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Documento getDocumento() {
+        return documento;
     }
-
-    public TipoDocumento getDocumento() {
-        return documento.getTipo();
-    }
-
-    public void setDocumento(Documento documento) {
-        this.documento = documento;
-    }
-
     public String getNomeDoPai() {
         return nomeDoPai;
     }
-
-    public void setNomeDoPai(String nomeDoPai) {
-        this.nomeDoPai = nomeDoPai;
-    }
-
     public String getNomeDaMae() {
         return nomeDaMae;
     }
-
-    public void setNomeDaMae(String nomeDaMae) {
-        this.nomeDaMae = nomeDaMae;
-    }
-
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+
+    public CartaoDeCredito getCartaoDoHospede() {
+        return cartaoDoHospede;
+    }
+
+    private void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
-    public long getCartaoDoHospede() {
-        return cartaoDoHospede.getNumeroDoCartao();
+    private void setPais(String pais) {
+        this.pais = pais;
+    }
+    private void setEmail(String email) {
+        this.email = email;
+    }
+    private void setDocumento(Documento documento) {
+        this.documento = documento;
+    }
+    private void setNomeDoPai(String nomeDoPai) {
+        this.nomeDoPai = nomeDoPai;
+    }
+    private void setNomeDaMae(String nomeDaMae) {
+        this.nomeDaMae = nomeDaMae;
     }
 
-    public void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
+    private void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
         this.cartaoDoHospede = cartaoDoHospede;
     }
 

@@ -13,14 +13,14 @@ public class Documento {
         return numero;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
 
     public TipoDocumento getTipo() {
         return tipo;
     }
 
+    private void setNumero(String numero) {
+        this.numero = numero;
+    }
     private void setTipo(TipoDocumento tipagem) {
         this.tipo = tipagem;
     }

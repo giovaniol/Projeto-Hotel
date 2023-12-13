@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Hotel {
@@ -46,7 +47,7 @@ public class Hotel {
 
     public void adicionaFuncionario(Funcionario funcionario) {
         this.funcionario.add(funcionario);
-        System.out.println("Funcionário contratado com sucesso!");
+
 
     }
 
@@ -134,6 +135,28 @@ public class Hotel {
             }
         }
     }
+    public void relatorioDeSaida(){
+        for (Reserva r: reserva) {
+            System.out.println("Hospede: " +r.getHospedePrincipal().getNome());
+            System.out.println(r.getHospedePrincipal().getDocumento().getTipo() + ": " + r.getHospedePrincipal().getDocumento().getNumero());
+            System.out.println("Data de Entrada: " + r.getDataChegadaDoHospede());
+            System.out.println("Hora da Entrada: " + r.getHoraDeEntradaDoHospede());
+            System.out.println("Data Prevista Para a Saída: " + r.getDataSaidaDoHospede());
+            System.out.println("Hora Prevista Para a Saída: " + r.getHoraDeSaidaDoHospede());
+            System.out.println("Total de Diárias: " + ChronoUnit.DAYS.between(r.getDataChegadaDoHospede(), r.getDataSaidaDoHospede()));
+            System.out.println("Valor total da Diária " + r.getAcomodacaoDesejada().getValorDaDiaria());
+            System.out.println("Valor do consumo dos hospedes: " );
+            //
+            // ESPAÇO DE ITENS DE CONSUMO 
+            //
+            //
+            //
+            System.out.println("Valor Total a Pagar: " + r.calcularTotalAPagar());
+            System.out.println("Pagamento em: " + r.getHospedePrincipal().getCartaoDoHospede().toString());
+            System.out.println("\n________________________________");
+            System.out.println("       ASSINATURA DO HÓSPEDE");
 
+        }
+    }
 
 }

@@ -16,6 +16,11 @@ public class CartaoDeCredito {
         setDataDeValidadeDoCartao(dataDeValidadeDoCartao);
     }
 
+    @Override
+    public String toString() {
+        return "Cartão de Crédito ";
+    }
+
     public long getNumeroDoCartao() {
         return numeroDoCartao;
     }
