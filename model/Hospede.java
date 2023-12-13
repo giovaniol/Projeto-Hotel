@@ -26,8 +26,9 @@ private CartaoDeCredito cartaoDoHospede;
         setDataNascimento(dataNascimento);
         setCartaoDoHospede(new CartaoDeCredito(numeroDoCartao, cvv, dataDeValidadeDoCartao));
     }
+
     public void detalhesHospede() {
-        System.out.println("-------------Hospede--------------");
+        System.out.println("----------Hospede------------");
         System.out.println("Nome: " + getNome());
         System.out.println("Cidade: " + getCidade());
         System.out.println("Estado: " + getEstado());
@@ -39,8 +40,9 @@ private CartaoDeCredito cartaoDoHospede;
         System.out.println("País: " + getPais());
         System.out.println("Nome do pai: " + getNomeDoPai());
         System.out.println("Nome da mae: " + getNomeDaMae());
-        System.out.println("----------------------------------");
+        System.out.println("------------------------------");
     }
+
     public String getPais() {
         return pais;
     }

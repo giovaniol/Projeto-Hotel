@@ -15,7 +15,8 @@ public class Reserva {
     private Acomodacao acomodacaoDesejada;
     private Boleto boleto;
     private ArrayList<ItensDeConsumo> consumidos;
-    private ArrayList<Hospede> acompanhantes;
+    private Hospede acompanhante;
+    private boolean temAcompanhante;
     private double taxaDeMulta;
 
     public Reserva(LocalDate dataChegadaDoHospede, LocalTime horaDeEntradaDoHospede, LocalTime horaDeSaidaDoHospede,
@@ -27,8 +28,7 @@ public class Reserva {
         setDataSaidaDoHospede(dataSaidaDoHospede);
         setHoraDeEntradaDoHospede(horaDeEntradaDoHospede);
         setHoraDeSaidaDoHospede(horaDeSaidaDoHospede);
-
-        acompanhantes = new ArrayList<>();
+        setTemAcompanhante(false);
         consumidos = new ArrayList<>();
     }
 
@@ -50,8 +50,8 @@ public class Reserva {
         return total;
     }
     public void adicionarAcompanhantes(Hospede hospede){
-        acompanhantes.add(hospede);
-        System.out.println("Acompanhante adicionado.");
+        this.acompanhante = hospede;
+        setTemAcompanhante(true);
     }
 
     public LocalTime getHoraDeEntradaDoHospede() {
@@ -101,6 +101,9 @@ public class Reserva {
     public void setBoleto(Boleto boleto) {
         this.boleto = boleto;
     }
+    public Hospede getAcompanhantes(){
+        return this.acompanhante;
+    }
     public void setHospedePrincipal(Hospede hospedePrincipal) {
 
         this.hospedePrincipal = hospedePrincipal;
@@ -116,4 +119,12 @@ public class Reserva {
     public Acomodacao getAcomodacaoDesejada() {
         return acomodacaoDesejada;
     }
+    public boolean temAcompanhante(){
+        return temAcompanhante;
+    }
+    public void setTemAcompanhante(Boolean resposta){
+        this.temAcompanhante = resposta;
+    }
+
+
 }
