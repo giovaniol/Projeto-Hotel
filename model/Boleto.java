@@ -6,10 +6,10 @@ import java.time.temporal.ChronoUnit;
 /**
  * A classe Boleto representa um boleto com informações como data de vencimento,
  * valor e código de barras.
- *
+ *<p>
  * O código de barras é utilizado para extrair a data de vencimento e o valor do boleto.
+ *</p>
  *
- * @author Giovani
  */
 public class Boleto {
     /** A data de vencimento do boleto */

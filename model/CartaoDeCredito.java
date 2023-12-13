@@ -6,7 +6,6 @@ import java.time.LocalDate;
  * A classe CartaoDeCredito representa as informações de um cartão de crédito,
  * incluindo número do cartão, CVV e data de validade.
  *
- * @author Giovani
  */
 public class CartaoDeCredito {
 
