@@ -96,7 +96,7 @@ public class Hotel {
         return false;
     }
 
-    public void relatorioDeHospedes() {
+    public void relatarHospedes() {
         for (Hospede alguem : hospedesNoHotel) {
             alguem.detalhesHospede();
         }
@@ -111,7 +111,7 @@ public class Hotel {
     public void relatorioDeHospede() {
         System.out.println("---------Relatório-----------");
         for (Reserva reservinha : reserva) {
-            System.out.println("Hospede Principal: " + reservinha.getHospedePrincipal());
+            System.out.println("Hospede Principal: " + reservinha.getHospedePrincipal().getNome());
             if (reservinha.temAcompanhante()) {
                 System.out.println("Acompanhantes: " + reservinha.getAcompanhantes().getNome());
             }

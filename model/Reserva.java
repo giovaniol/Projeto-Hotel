@@ -22,7 +22,7 @@ public class Reserva {
     public Reserva(LocalDate dataChegadaDoHospede, LocalTime horaDeEntradaDoHospede, LocalTime horaDeSaidaDoHospede,
                    LocalDate dataSaidaDoHospede,
                    Hospede hospedePrincipal, Acomodacao acomodacaoDesejada) {
-        setDataChegadaDoHospede(getDataChegadaDoHospede());
+        setDataChegadaDoHospede(dataChegadaDoHospede);
         setHospedePrincipal(hospedePrincipal);
         setAcomodacaoDesejada(acomodacaoDesejada);
         setDataSaidaDoHospede(dataSaidaDoHospede);

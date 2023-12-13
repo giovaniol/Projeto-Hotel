@@ -24,8 +24,9 @@ public class Main {
         hotel.adicionarReserva(reserva1);
         hotel.adicionaHospede(lelem);
         hotel.adicionaHospede(pedro);
-        hotel.relatorioDeHospedes();
+        hotel.relatorioDeHospede();
         hotel.getHospedes();
+
 
 
 
