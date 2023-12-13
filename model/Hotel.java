@@ -110,17 +110,30 @@ public class Hotel {
 
     public void relatorioDeHospede() {
         System.out.println("---------Relatório-----------");
-        for (Reserva reservinha : reserva) {
-            System.out.println("Hospede Principal: " + reservinha.getHospedePrincipal().getNome());
-            if (reservinha.temAcompanhante()) {
-                System.out.println("Acompanhantes: " + reservinha.getAcompanhantes().getNome());
+        for (Reserva r : reserva) {
+            System.out.println("Hospede Principal: " + r.getHospedePrincipal().getNome());
+            if (r.temAcompanhante()) {
+                System.out.println("Acompanhantes: " + r.getAcompanhantes().getNome());
             }
-            System.out.println("Data de Entrada: " + reservinha.getDataChegadaDoHospede());
-            System.out.println("Data de Saída: " + reservinha.getDataSaidaDoHospede());
-            System.out.println("Número da acomodação: " + reservinha.getAcomodacaoDesejada().getNumeroDaAcomodacao());
+            System.out.println("Data de Entrada: " + r.getDataChegadaDoHospede());
+            System.out.println("Data de Saída: " + r.getDataSaidaDoHospede());
+            System.out.println("Número da acomodação: " + r.getAcomodacaoDesejada().getNumeroDaAcomodacao());
 
         }
         System.out.println("-----------------------------");
     }
+
+    public void relatorioDatasDeReserva(){
+        LocalDate data = LocalDate.now();
+        for (Reserva r: reserva) {
+            if(r.getDataChegadaDoHospede().equals(data)){
+                System.out.println("Hospede Principal: " +r.getHospedePrincipal().getNome());
+                System.out.println("Telefone para Contato: " + r.getHospedePrincipal().getTelefone());
+                System.out.println("Tipo de Acomodação Escolhida: " + r.getAcomodacaoDesejada().getCodigoTipoAcomodacao());
+                System.out.println("Data Prevista Para a Saída: " + r.getDataSaidaDoHospede());
+            }
+        }
+    }
+
 
 }
