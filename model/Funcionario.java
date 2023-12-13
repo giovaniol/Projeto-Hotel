@@ -8,23 +8,11 @@ public class Funcionario extends Pessoa{
     private LocalDate dataDeNascimento;
 
     public Funcionario(String nome, String endereco, String cidade,
-                       String estado, String telefone, int senha, double salario,
+                       String estado, String telefone, double salario,
                        LocalDate dataDeNascimento) {
-        super(nome, endereco, cidade, estado, telefone, senha);
+        super(nome, endereco, cidade, estado, telefone);
         setsalario(salario);
         setDataDeNascimento(dataDeNascimento);
-    }
-
-    public void incluirFuncionario(){
-
-    }
-
-    public void alterarFuncionario(){
-
-    }
-
-    public void removerFuncionario(){
-
     }
 
     public boolean limpeza(){

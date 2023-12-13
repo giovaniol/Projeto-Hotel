@@ -1,10 +1,10 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+
 
 public class Hospede extends Pessoa{
-
+private final int SENHA = 1000;
 private String pais;
 private String email;
 private Documento documento;
@@ -13,11 +13,11 @@ private String nomeDaMae;
 private LocalDate dataNascimento;
 private CartaoDeCredito cartaoDoHospede;
 
-    public Hospede(String nome, String endereco, String cidade, String estado, String telefone, int senha,
+    public Hospede(String nome, String endereco, String cidade, String estado, String telefone,
                    String pais, String email, String documento, TipoDocumento tipo, String nomeDaMae
             , String nomeDoPai, LocalDate dataNascimento,
                    long numeroDoCartao, int cvv, LocalDate dataDeValidadeDoCartao) {
-        super(nome, endereco, cidade, estado, telefone, senha);
+        super(nome, endereco, cidade, estado, telefone);
         setPais(pais);
         setEmail(email);
         setDocumento(new Documento(documento, tipo));
@@ -66,6 +66,10 @@ private CartaoDeCredito cartaoDoHospede;
 
     public CartaoDeCredito getCartaoDoHospede() {
         return cartaoDoHospede;
+    }
+
+    public int getSENHA() {
+        return SENHA;
     }
 
     private void setDataNascimento(LocalDate dataNascimento) {

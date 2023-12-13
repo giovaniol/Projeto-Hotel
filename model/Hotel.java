@@ -147,7 +147,7 @@ public class Hotel {
             System.out.println("Valor total da Diária " + r.getAcomodacaoDesejada().getValorDaDiaria());
             System.out.println("Valor do consumo dos hospedes: " );
             //
-            // ESPAÇO DE ITENS DE CONSUMO 
+            // ESPAÇO DE ITENS DE CONSUMO
             //
             //
             //

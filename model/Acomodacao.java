@@ -11,6 +11,21 @@ public class Acomodacao {
     private TipoAcomodacao codigoTipoAcomodacao;
     private double valorDaDiaria;
 
+
+    public Acomodacao(int numeroDaAcomodacao, int andarDaAcomodacao,
+                      TipoAcomodacao codigoTipoAcomodacao, double valorDaDiaria) {
+        hospedes = new ArrayList<>();
+        setNumeroDaAcomodacao(numeroDaAcomodacao);
+        setAndarDaAcomodacao(andarDaAcomodacao);
+        setCodigoTipoAcomodacao(codigoTipoAcomodacao);
+        setValorDaDiaria(valorDaDiaria);
+    }
+    public void adicionarHospede(Hospede hospede){
+        hospedes.add(hospede);
+    }
+    public void removerHospede(Hospede hospede){
+        hospedes.remove(hospede);
+    }
     public double getValorDaDiaria() { return valorDaDiaria; }
 
     public void setValorDaDiaria(double valorDaDiaria) {
