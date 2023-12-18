@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Hotel {
     private ArrayList<Hospede> hospedesNoHotel;
-    private ArrayList<Funcionario> funcionario;
+    private ArrayList<Funcionario> funcionariosNoHotel;
     private ArrayList<Acomodacao> acomodacoesDoHotel;
     private ArrayList<Reserva> reservas;
     private ArrayList<ItensDeConsumo> itensDeConsumos;
@@ -34,7 +34,17 @@ public class Hotel {
         hospedesNoHotel.add(hospede2);
         hospedesNoHotel.add(hospede3);
 
-        funcionario = new ArrayList<>();
+        // Dados Mokados - Funcionários
+        Funcionario funcionario1 = new Funcionario("Fernando", "Avenida 1", "Araraquara", "São Paulo", "(16) 99999-9999", 2100, LocalDate.of(1993, 4, 5));
+        Funcionario funcionario2 = new Funcionario("Gabriel", "Avenida 2", "São Luis", "Maranhão", "(98) 88888-8888", 1500, LocalDate.of(1990, 8, 21));
+        Funcionario funcionario3 = new Funcionario("Larissa", "Avenida 3", "Ouro Preto", "Minas Gerais", "(31) 77777-7777", 5000, LocalDate.of(1970, 2, 16));
+
+        funcionariosNoHotel = new ArrayList<>();
+
+        // Adicionando funcionários mockados
+        funcionariosNoHotel.add(funcionario1);
+        funcionariosNoHotel.add(funcionario2);
+        funcionariosNoHotel.add(funcionario3);
 
         itensDeConsumos = new ArrayList<>();
         acomodacoesDoHotel = new ArrayList<>();
@@ -117,13 +127,13 @@ public class Hotel {
     }
 
     public void adicionaFuncionario(Funcionario funcionario) {
-        this.funcionario.add(funcionario);
+        this.funcionariosNoHotel.add(funcionario);
 
 
     }
 
     public void removeFuncionario(String nome) {
-        this.funcionario.removeIf(alguem -> alguem.getNome().trim().equalsIgnoreCase(nome.trim()));
+        this.funcionariosNoHotel.removeIf(alguem -> alguem.getNome().trim().equalsIgnoreCase(nome.trim()));
     }
 
     public void ajusteFuncionario() {
