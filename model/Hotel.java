@@ -147,8 +147,15 @@ public class Hotel {
         }
     }
 
-    public void ajusteFuncionario() {
-
+    public void ajusteFuncionario(double salario,double novoSalario) {
+        for(Funcionario h: funcionariosNoHotel){
+            if(h.getSalario() == salario){
+                h.setSalario(novoSalario);
+                System.out.println("Informações do funcionario atualizadas.");
+                return;
+            }
+        }
+        System.out.println("Funcionario não encontrado.");
     }
 
     public void adicionaAcomodacao(Acomodacao acomodacao) {
