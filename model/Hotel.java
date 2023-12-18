@@ -193,23 +193,27 @@ public class Hotel {
         }
     }
 
-    public void adicionarReserva(Reserva reservinha) {
-        reservas.add(reservinha);
+    public void adicionarReserva(Reserva reserva) {
+        reservas.add(reserva);
     }
 
-    public void ajusteReserva() {
-
-    }
-
-    public void removeReserva(Reserva reservinha) {
-        reservas.remove(reservinha);
-    }
-
-    public void checkInDoHotel(Reserva reservinha) {
-        reservas.add(reservinha);
+    public void ajusteReserva(Reserva reserva, LocalDate novaDataChegada, LocalDate novaDataSaida) {
+        if (verificarDisponibilidadeDeReserva(novaDataChegada, novaDataSaida)) {
+            reserva.setDataChegadaDoHospede(novaDataChegada);
+            reserva.setDataSaidaDoHospede(novaDataSaida);
+            System.out.println("Reserva ajustada com sucesso.");
+        } else {
+            System.out.println("Não foi possível ajustar a reserva. Período já reservado.");
+        }
     }
 
     public void checkOutDoHotel(Reserva reserva) {
+        reservas.remove(reserva);
+        System.out.println("Check-out realizado com sucesso.");
+    }
+
+    public void ajusteAcomodacao(Acomodacao acomodacao) {
+
     }
 
     public boolean verificarPossibilidadeDeReserva() {
