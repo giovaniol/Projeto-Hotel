@@ -34,6 +34,7 @@ public class Hotel {
         hospedesNoHotel.add(hospede2);
         hospedesNoHotel.add(hospede3);
 
+
         // Dados Mokados - Funcionários
         Funcionario funcionario1 = new Funcionario("Fernando", "Avenida 1", "Araraquara", "São Paulo", "(16) 99999-9999", 2100, LocalDate.of(1993, 4, 5));
         Funcionario funcionario2 = new Funcionario("Gabriel", "Avenida 2", "São Luis", "Maranhão", "(98) 88888-8888", 1500, LocalDate.of(1990, 8, 21));
@@ -128,12 +129,22 @@ public class Hotel {
 
     public void adicionaFuncionario(Funcionario funcionario) {
         this.funcionariosNoHotel.add(funcionario);
-
-
     }
 
     public void removeFuncionario(String nome) {
-        this.funcionariosNoHotel.removeIf(alguem -> alguem.getNome().trim().equalsIgnoreCase(nome.trim()));
+        Funcionario funcionarioARemover = null;
+        for(Funcionario f : funcionariosNoHotel){
+            if(f.getNome().equalsIgnoreCase(nome.trim())){
+                funcionarioARemover = f;
+                break;
+            }
+        }
+
+        if(funcionarioARemover != null){
+            funcionariosNoHotel.remove(funcionarioARemover);
+        }else{
+            System.out.println("Funcionário não encontrado.");
+        }
     }
 
     public void ajusteFuncionario() {
