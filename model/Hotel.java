@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
@@ -8,29 +9,99 @@ public class Hotel {
     private ArrayList<Hospede> hospedesNoHotel;
     private ArrayList<Funcionario> funcionario;
     private ArrayList<Acomodacao> acomodacoesDoHotel;
-    private ArrayList<Reserva> reserva;
+    private ArrayList<Reserva> reservas;
     private ArrayList<ItensDeConsumo> itensDeConsumos;
 
     public Hotel() {
+        // Dados Mockados - Hospedes
+        Hospede hospede1 = new Hospede("João", "Rua 1", "Cidade 1", "Estado 1", "Telefone 1",
+                "Brasil", "Email 1", "Documento 1", TipoDocumento.CPF, "Mãe 1",
+                "Pai 1", LocalDate.of(1990, 1, 1),
+                123456789, 123, LocalDate.of(2020, 1, 1));
+        Hospede hospede2 = new Hospede("Maria", "Rua 2", "Cidade 2", "Estado 2", "Telefone 2",
+                "Brasil", "Email 2", "Documento 2", TipoDocumento.CPF, "Mãe 2",
+                "Pai 2", LocalDate.of(1990, 1, 1),
+                123456789, 123, LocalDate.of(2020, 1, 1));
+        Hospede hospede3 = new Hospede("José", "Rua 3", "Cidade 3", "Estado 3", "Telefone 3",
+                "Brasil", "Email 3", "Documento 3", TipoDocumento.CPF, "Mãe 3",
+                "Pai 3", LocalDate.of(1990, 1, 1),
+                123456789, 123, LocalDate.of(2020, 1, 1));
+
         hospedesNoHotel = new ArrayList<>();
+
+        // Adicionando os hospedes mockados
+        hospedesNoHotel.add(hospede1);
+        hospedesNoHotel.add(hospede2);
+        hospedesNoHotel.add(hospede3);
+
         funcionario = new ArrayList<>();
+
         itensDeConsumos = new ArrayList<>();
         acomodacoesDoHotel = new ArrayList<>();
-        reserva = new ArrayList<>();
+
+        // Dados Mockados - Acomodações
+        Acomodacao acomodacao1 = new Acomodacao(101, 1, TipoAcomodacao.COMUM, 100.0);
+        Acomodacao acomodacao2 = new Acomodacao(102, 1, TipoAcomodacao.SUITE, 200.0);
+        Acomodacao acomodacao3 = new Acomodacao(201, 2, TipoAcomodacao.COMUM, 300.0);
+
+        acomodacoesDoHotel.add(acomodacao1);
+        acomodacoesDoHotel.add(acomodacao2);
+        acomodacoesDoHotel.add(acomodacao3);
+
+
+        reservas = new ArrayList<>();
+
+        // Dados Mockados - Reservas
+        Reserva reserva1 = new Reserva(
+                LocalDate.of(2023, 1, 10),
+                LocalTime.of(14, 0),
+                LocalTime.of(12, 0),
+                LocalDate.of(2023, 1, 15),
+                hospede1,
+                acomodacao1
+        );
+
+        Reserva reserva2 = new Reserva(
+                LocalDate.of(2023, 2, 5),
+                LocalTime.of(12, 0),
+                LocalTime.of(10, 0),
+                LocalDate.of(2023, 2, 10),
+                hospede2,
+                acomodacao2
+        );
+
+        reservas.add(reserva1);
+        reservas.add(reserva2);
     }
 
     public void adicionaHospede(Hospede hospede) {
         hospedesNoHotel.add(hospede);
-
     }
 
-    public void ajusteHospede() {
-
+    public void ajusteHospede(String numeroDocumento, String novoEmail) {
+        for (Hospede h : hospedesNoHotel) {
+            if (h.getDocumento().getNumero().equalsIgnoreCase(numeroDocumento.trim())) {
+                h.setEmail(novoEmail);
+                System.out.println("Informações do hóspede atualizadas.");
+                return;
+            }
+        }
+        System.out.println("Hóspede não encontrado.");
     }
 
-    public void removeHospede(Hospede hospede) {
-        hospedesNoHotel.remove(hospede);
-
+    public void removeHospede(String nome) {
+        Hospede hospedeARemover = null;
+        for (Hospede h : hospedesNoHotel) {
+            if (h.getNome().equalsIgnoreCase(nome.trim())) {
+                hospedeARemover = h;
+                break;
+            }
+        }
+        if (hospedeARemover != null) {
+            hospedesNoHotel.remove(hospedeARemover);
+        } else {
+            System.out.println("Hóspede não encontrado.");
+        }
     }
 
     public void adicionaItem() {
@@ -73,8 +144,29 @@ public class Hotel {
 
     }
 
+    public boolean verificarDisponibilidadeDeReserva(LocalDate dataChegada, LocalDate dataSaida) {
+        for (Reserva r : reservas) {
+            if ((dataChegada.isAfter(r.getDataChegadaDoHospede()) && dataChegada.isBefore(r.getDataSaidaDoHospede()))
+                    || (dataSaida.isAfter(r.getDataChegadaDoHospede()) && dataSaida.isBefore(r.getDataSaidaDoHospede()))) {
+                return false;
+            }
+            if (dataChegada.isBefore(r.getDataChegadaDoHospede()) && dataSaida.isAfter(r.getDataSaidaDoHospede())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void fazerReserva(Reserva novaReserva) {
+        if (verificarDisponibilidadeDeReserva(novaReserva.getDataChegadaDoHospede(), novaReserva.getDataSaidaDoHospede())) {
+            this.adicionarReserva(novaReserva);
+        } else {
+            System.out.println("Não foi possível fazer a reserva. Período já reservado.");
+        }
+    }
+
     public void adicionarReserva(Reserva reservinha) {
-        reserva.add(reservinha);
+        reservas.add(reservinha);
     }
 
     public void ajusteReserva() {
@@ -82,11 +174,11 @@ public class Hotel {
     }
 
     public void removeReserva(Reserva reservinha) {
-        reserva.remove(reservinha);
+        reservas.remove(reservinha);
     }
 
     public void checkInDoHotel(Reserva reservinha) {
-        reserva.add(reservinha);
+        reservas.add(reservinha);
     }
 
     public void checkOutDoHotel(Reserva reserva) {
@@ -111,7 +203,7 @@ public class Hotel {
 
     public void relatorioDeHospede() {
         System.out.println("---------Relatório-----------");
-        for (Reserva r : reserva) {
+        for (Reserva r : reservas) {
             System.out.println("Hospede Principal: " + r.getHospedePrincipal().getNome());
             if (r.temAcompanhante()) {
                 System.out.println("Acompanhantes: " + r.getAcompanhantes().getNome());
@@ -126,7 +218,7 @@ public class Hotel {
 
     public void relatorioDatasDeReserva(){
         LocalDate data = LocalDate.now();
-        for (Reserva r: reserva) {
+        for (Reserva r: reservas) {
             if(r.getDataChegadaDoHospede().equals(data)){
                 System.out.println("Hospede Principal: " +r.getHospedePrincipal().getNome());
                 System.out.println("Telefone para Contato: " + r.getHospedePrincipal().getTelefone());
@@ -136,7 +228,7 @@ public class Hotel {
         }
     }
     public void relatorioDeSaida(){
-        for (Reserva r: reserva) {
+        for (Reserva r: reservas) {
             System.out.println("Hospede: " +r.getHospedePrincipal().getNome());
             System.out.println(r.getHospedePrincipal().getDocumento().getTipo() + ": " + r.getHospedePrincipal().getDocumento().getNumero());
             System.out.println("Data de Entrada: " + r.getDataChegadaDoHospede());
@@ -146,11 +238,6 @@ public class Hotel {
             System.out.println("Total de Diárias: " + ChronoUnit.DAYS.between(r.getDataChegadaDoHospede(), r.getDataSaidaDoHospede()));
             System.out.println("Valor total da Diária " + r.getAcomodacaoDesejada().getValorDaDiaria());
             System.out.println("Valor do consumo dos hospedes: " );
-            //
-            // ESPAÇO DE ITENS DE CONSUMO
-            //
-            //
-            //
             System.out.println("Valor Total a Pagar: " + r.calcularTotalAPagar());
             System.out.println("Pagamento em: " + r.getHospedePrincipal().getCartaoDoHospede().toString());
             System.out.println("\n________________________________");

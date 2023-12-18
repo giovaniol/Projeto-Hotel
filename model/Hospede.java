@@ -180,31 +180,31 @@ public class Hospede extends Pessoa {
         System.out.println("------------------------------");
     }
 
-    private void setPais(String pais) {
+    public void setPais(String pais) {
         this.pais = pais;
     }
 
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    private void setDocumento(Documento documento) {
+    public void setDocumento(Documento documento) {
         this.documento = documento;
     }
 
-    private void setNomeDoPai(String nomeDoPai) {
+    public void setNomeDoPai(String nomeDoPai) {
         this.nomeDoPai = nomeDoPai;
     }
 
-    private void setNomeDaMae(String nomeDaMae) {
+    public void setNomeDaMae(String nomeDaMae) {
         this.nomeDaMae = nomeDaMae;
     }
 
-    private void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
-    private void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
+    public void setCartaoDoHospede(CartaoDeCredito cartaoDoHospede) {
         this.cartaoDoHospede = cartaoDoHospede;
     }
 }
