@@ -63,6 +63,10 @@ public class Funcionario extends Pessoa {
         return this.salario;
     }
 
+    public int getSENHA() {
+        return SENHA;
+    }
+
     /**
      * Obtém a data de nascimento do funcionário.
      *
