@@ -134,9 +134,9 @@ public class Hotel {
         }
     }
 
-    public void ajusteFuncionario(double salario,double novoSalario) {
+    public void ajusteFuncionario(double salario,double novoSalario,String nome) {
         for(Funcionario h: funcionariosNoHotel){
-            if(h.getSalario() == salario){
+            if(h.getSalario() == salario && h.getNome()== nome){
                 h.setSalario(novoSalario);
                 System.out.println("Informações do funcionario atualizadas.");
                 return;
