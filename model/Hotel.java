@@ -59,7 +59,6 @@ public class Hotel {
         acomodacoesDoHotel.add(acomodacao2);
         acomodacoesDoHotel.add(acomodacao3);
 
-
         reservas = new ArrayList<>();
 
         // Dados Mockados - Reservas
@@ -115,18 +114,6 @@ public class Hotel {
         }
     }
 
-    public void adicionaItem() {
-
-    }
-
-    public void ajusteItem() {
-
-    }
-
-    public void removeItem() {
-
-    }
-
     public void adicionaFuncionario(Funcionario funcionario) {
         this.funcionariosNoHotel.add(funcionario);
     }
@@ -160,10 +147,6 @@ public class Hotel {
 
     public void adicionaAcomodacao(Acomodacao acomodacao) {
         this.acomodacoesDoHotel.add(acomodacao);
-
-    }
-
-    public void ajusteAcomodacao() {
 
     }
 
@@ -239,10 +222,6 @@ public class Hotel {
     public void checkOutDoHotel(Reserva reserva) {
         reservas.remove(reserva);
         System.out.println("Check-out realizado com sucesso.");
-    }
-
-    public void ajusteAcomodacao(Acomodacao acomodacao) {
-
     }
 
     public boolean verificarPossibilidadeDeReserva() {
