@@ -172,6 +172,13 @@ public class Hotel {
 
     }
 
+    /**
+     * Verifica a disponibilidade de reserva para um período específico.
+     *
+     * @param dataChegada Data de chegada desejada para a reserva.
+     * @param dataSaida   Data de saída desejada para a reserva.
+     * @return true se o período estiver disponível para reserva, false caso contrário.
+     */
     public boolean verificarDisponibilidadeDeReserva(LocalDate dataChegada, LocalDate dataSaida) {
         for (Reserva r : reservas) {
             if ((dataChegada.isAfter(r.getDataChegadaDoHospede()) && dataChegada.isBefore(r.getDataSaidaDoHospede()))
@@ -185,6 +192,11 @@ public class Hotel {
         return true;
     }
 
+    /**
+     * Realiza uma nova reserva se o período estiver disponível.
+     *
+     * @param novaReserva A nova reserva a ser efetuada.
+     */
     public void fazerReserva(Reserva novaReserva) {
         if (verificarDisponibilidadeDeReserva(novaReserva.getDataChegadaDoHospede(), novaReserva.getDataSaidaDoHospede())) {
             this.adicionarReserva(novaReserva);
@@ -193,10 +205,22 @@ public class Hotel {
         }
     }
 
+    /**
+     * Adiciona uma reserva à lista de reservas.
+     *
+     * @param reserva A reserva a ser adicionada.
+     */
     public void adicionarReserva(Reserva reserva) {
         reservas.add(reserva);
     }
 
+    /**
+     * Realiza o ajuste de uma reserva para novas datas, se o período estiver disponível.
+     *
+     * @param reserva         A reserva a ser ajustada.
+     * @param novaDataChegada A nova data de chegada desejada.
+     * @param novaDataSaida   A nova data de saída desejada.
+     */
     public void ajusteReserva(Reserva reserva, LocalDate novaDataChegada, LocalDate novaDataSaida) {
         if (verificarDisponibilidadeDeReserva(novaDataChegada, novaDataSaida)) {
             reserva.setDataChegadaDoHospede(novaDataChegada);
@@ -207,6 +231,11 @@ public class Hotel {
         }
     }
 
+    /**
+     * Realiza o check-out de um hóspede, removendo a reserva da lista de reservas.
+     *
+     * @param reserva A reserva para a qual o check-out será realizado.
+     */
     public void checkOutDoHotel(Reserva reserva) {
         reservas.remove(reserva);
         System.out.println("Check-out realizado com sucesso.");
