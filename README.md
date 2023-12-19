@@ -19,6 +19,8 @@ O projeto foi conduzido com metodologias ágeis, utilizando Kanban e Trello para
 
 Foi estabelecida a prática de reuniões diárias para acompanhamento do progresso do projeto. Durante essas reuniões, as discussões eram abertas para compartilhar dificuldades, avanços e solicitar auxílio quando necessário, permitindo uma colaboração mais efetiva entre os membros do grupo. Além disso, mantivemos um ambiente aberto para que qualquer membro pudesse solicitar assistência e colaboração, visando o apoio mútuo para resolver desafios específicos durante o desenvolvimento do projeto.
 
+Trello: https://trello.com/invite/b/TMz8LCmS/ATTId6e14d762faa59d28fc3b47ba59e477eD2890421/porjeto-hotel
+
 ## Compilação e Execução
 
 Para compilar e executar o sistema:
