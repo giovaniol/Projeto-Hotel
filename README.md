@@ -11,7 +11,7 @@
 
 O projeto foi conduzido com metodologias ágeis, utilizando Kanban e Trello para a organização e distribuição de tarefas entre os membros do grupo. Optamos por dividir o sistema em módulos distintos, com cada membro responsável por um módulo específico, abrangendo operações de criação, deleção e alteração.
 
-- **Lucas**: Módulo de Reserva (criação, deleção, alteração), refatoração de código, documentação e dados mockados.
+- **Lucas**: Módulo de Reserva (criação, deleção, alteração, documentação), refatoração de código e dados mockados.
 - **Giovani**: Módulos de Acomodação e Hóspede (criação, deleção, alteração).
 - **Ariane e Ellen**: Módulo de Funcionário (criação, deleção, alteração).
 
